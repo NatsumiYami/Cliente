@@ -1,0 +1,123 @@
+﻿@model Cliente.Models.Empleado
+
+@{
+    ViewBag.Title = "Eliminar registro";
+}
+
+<h2 class="text-center" style="color:blue;">Eliminar registro</h2>
+<body style="background-color:#D1F4F4;">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+    <div class="form-horizontal">
+        <h4 style="color:cornflowerblue;">Empleado a eliminar</h4>
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    
+    <div class="form-group">
+
+
+
+
+
+        <!-- Links   @Html.LabelFor(model => model.Id_empleado, htmlAttributes: new { @class = "control-label col-md-2" })-->
+        @Html.HiddenFor(model => model.Id_empleado)
+        <div class="col-md-4">
+
+            <!-- Links  @Html.HiddenFor(model => model.Id_empleado, new { Value = "1" }))-->
+            <!-- Links     @Html.TextBoxFor(model => model.Id_empleado, new { @readonly = "readonly" })-->
+            <!-- Links     @Html.ValidationMessageFor(model => model.Id_empleado, "", new { @class = "text-danger" })-->
+        </div>
+
+
+    </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Nombre, new { @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Apellido, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Apellido, new { @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Direccion, new { @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Telefono, new { @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Email, new { @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fecha_nacimiento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Fecha_nacimiento, new { @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Fecha_nacimiento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <br />
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar cambios" class="btn btn-secondary" />
+            </div>
+        </div>
+    </div>
+    }
+
+    <br />
+    <div>
+
+        <form>
+            <a href="http://localhost:55993/Empleado/Index">
+                <input type="button" value="Regresar a inicio" class="btn btn-primary">
+            </a>
+        </form>
+
+        <!-- Links   @Html.ActionLink("Regresar", "Index")-->
+
+
+    </div>
+</body>
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
